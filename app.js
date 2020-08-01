@@ -31,7 +31,7 @@ function setPosition(position) {
 	let latitude = position.coords.latitude;
 	let longitude = position.coords.longitude;
 
-	//getWeather(latitude, longitude);
+	getWeather(latitude, longitude);
 }
 
 // SHOW GEOLOCATION SERVICES ERROR
@@ -40,7 +40,12 @@ function showError(error) {
 	notificationElement.innerHTML = `<p> ${error.message} </p>`; 
 }
 
+// GET WEATHER FROM API PROVIDER
+function getWeather(latitude, longitude) {
+	let api = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${KEY}`;
 
+	console.log(api);
+}
 
 
 
